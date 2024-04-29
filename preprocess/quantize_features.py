@@ -14,6 +14,28 @@ from semantic_feature_dataloader import SematicFeatureDataset, PyramidSematicFea
 import sys
 sys.path.append('..')
 from utils.lem_utils import index_to_rgb_images, generate_colors
+# import colorsys
+# def index_to_rgb_images(input_tensor, color_map):
+#     """
+#     Args:
+#         input_tensor (torch.Tensor): (B, H, W, 1)
+#         color_map (torch.Tensor): (N, 3)
+#     Returns:
+#         _type_: (B, H, W, 3)
+#     """
+#     index_tensor = input_tensor[:, :, :, 0].long()
+#     rgb_images = color_map[index_tensor]
+
+#     return rgb_images
+
+# def generate_colors(n):
+#     colors = []
+#     for i in range(n):
+#         hue = i / float(n)  # 在色轮上均匀分布的色调值
+#         rgb = colorsys.hsv_to_rgb(hue, 1.0, 1.0)  # 将 HSV 色彩空间转换为 RGB
+#         color = torch.tensor(rgb)  # RGB 值在 [0, 1]
+#         colors.append(color)
+#     return torch.stack(colors, dim=0)
 import configargparse
 
 # Configuration

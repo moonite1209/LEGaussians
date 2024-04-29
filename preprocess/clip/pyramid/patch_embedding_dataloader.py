@@ -23,7 +23,7 @@ class PatchEmbeddingDataloader(FeatureDataloader):
         assert "stride_ratio" in cfg
         assert "image_shape" in cfg
         assert "model_name" in cfg
-
+        #TODO kernel
         self.kernel_size = int(cfg["image_shape"][0] * cfg["tile_ratio"])
         self.stride = int(self.kernel_size * cfg["stride_ratio"])
         self.padding = self.kernel_size // 2
@@ -49,7 +49,7 @@ class PatchEmbeddingDataloader(FeatureDataloader):
         self.start_y = self.center_y[0].float()
 
         self.model = model
-        self.process = process
+        self.process = process #TODO process
         # self.embed_size = self.model.embedding_dim
         self.embed_size = 512
         super().__init__(cfg, device, image_list, cache_path)
@@ -67,7 +67,7 @@ class PatchEmbeddingDataloader(FeatureDataloader):
     def create(self, image_list):
         assert self.model is not None, "model must be provided to generate features"
         assert image_list is not None, "image_list must be provided to generate features"
-
+        
         unfold_func = torch.nn.Unfold(
             kernel_size=self.kernel_size,
             stride=self.stride,
