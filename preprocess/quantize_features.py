@@ -12,7 +12,7 @@ from dino.dino_dataloader import DinoDataset
 from clip.clip_dataloader import PyramidMixtureDataset, DenseMixtureDataset
 from semantic_feature_dataloader import SematicFeatureDataset, PyramidSematicFeatureDataset
 import sys
-sys.path.append('..')
+sys.path.append('/home/moonite/code/LEGaussians')
 from utils.lem_utils import index_to_rgb_images, generate_colors
 # import colorsys
 # def index_to_rgb_images(input_tensor, color_map):
